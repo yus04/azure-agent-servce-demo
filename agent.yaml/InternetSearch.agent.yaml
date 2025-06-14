@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://aka.ms/ai-foundry-vsc/agent/1.0.0
+version: 1.0.0
+id: asst_rAhwqOUo589Mo0XNwnGCwQDW
+name: Internet Search Agent
+tools:
+  - type: bing_grounding
+    options:
+      tool_connections:
+        - >-
+          /subscriptions/c9363be9-8f08-445f-8640-ac26caad3e32/resourceGroups/rg-ai-foundry-resource/providers/Microsoft.CognitiveServices/accounts/saitoyu-ai-foundry-resource/projects/saitoyu-ai-foundry-resource/connections/saitoyugroundingwithbingsearch
+metadata: {}
+description: ''
+instructions: >-
+  あなたは Edge を使ってインターネット検索をするエージェントです。 ユーザーから指定された質問をいくつかの検索クエリに分解した後、Edge
+  でインターネット検索をしてください。 Edge はナレッジに登録されています。
+model:
+  id: gpt-4.1-deploy
+  options:
+    temperature: 0.01
+    top_p: 0.01

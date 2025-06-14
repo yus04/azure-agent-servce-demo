@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=https://aka.ms/ai-foundry-vsc/agent/1.0.0
+version: 1.0.0
+id: asst_WKa3HM1BQmEhxphqQYTDQO9U
+name: Business Trip Request Agent
+tools:
+  - type: openapi
+    id: CalluriHTTP_Tool
+    description: 
+    options:
+      specification: >-
+        {"openapi":"3.0.3","info":{"version":"1.0.0.0","title":"Call-uri-HTTP","description":"Use
+        this to call any REST endpoint using HTTP request. Provide the URI to
+        call as well as the content or the body of the
+        request"},"servers":[{"url":"https://prod-34.japaneast.logic.azure.com/workflows/04e04f78f0774333a34c2286a9f71450/triggers/When_a_HTTP_request_is_received/paths"}],"security":[{"sig":[]}],"paths":{"/invoke":{"post":{"description":"Use
+        this to call any REST endpoint using HTTP request. Provide the URI to
+        call as well as the content or the body of the
+        request","operationId":"When_a_HTTP_request_is_received-invoke","parameters":[{"name":"api-version","in":"query","description":"`2016-10-01`
+        is the most common generally available
+        version","required":true,"schema":{"type":"string","default":"2016-10-01"},"example":"2016-10-01"},{"name":"sv","in":"query","description":"The
+        version
+        number","required":true,"schema":{"type":"string","default":"1.0"},"example":"1.0"},{"name":"sp","in":"query","description":"The
+        permissions","required":true,"schema":{"type":"string","default":"%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun"},"example":"%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun"}],"responses":{"200":{"description":"The
+        Logic App
+        Response.","content":{"application/json":{"schema":{"type":"object"}}}},"default":{"description":"The
+        Logic App
+        Response.","content":{"application/json":{"schema":{"type":"object"}}}}},"deprecated":false,"requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"HTTP_URI":{"description":"URI
+        for HTTP
+        Request","type":"string"},"HTTP_request_content":{"description":"Content
+        or Body of the HTTP
+        Request","type":"string"}}}}},"required":true}}}},"components":{"securitySchemes":{"sig":{"type":"apiKey","description":"The
+        SHA 256 hash of the entire request URI with an internal
+        key.","name":"sig","in":"query"}}}}
+      auth:
+        type: connection
+        securityScheme:
+          connectionId: >-
+            /subscriptions/c9363be9-8f08-445f-8640-ac26caad3e32/resourceGroups/rg-ai-foundry-resource/providers/Microsoft.CognitiveServices/accounts/saitoyu-ai-foundry-resource/projects/saitoyu-ai-foundry-resource/connections/LogicApps_Tool_Connection_CalluriHTTP_7693
+metadata: {}
+description: ''
+instructions: >
+  あなたは出張申請を行うエージェントです。 出張申請の手続きは必要な情報を入れた文章を生成し、指定されたユーザーにメールを送ることです。 あなたは
+  Outlook でメールを送る Logic Apps のアクションが登録されているため、メールの送信は Logic Apps を呼び出すことで行えます。
+  出張申請の手続きに必要な情報は次の通りであり、情報が抜けている場合はユーザーに確認を取ってください。 必要な情報 ・送信先のメールアドレス ・出張先
+  ・出張期間 ・必要経費
+model:
+  id: gpt-4.1-deploy
+  options:
+    temperature: 0.01
+    top_p: 0.01

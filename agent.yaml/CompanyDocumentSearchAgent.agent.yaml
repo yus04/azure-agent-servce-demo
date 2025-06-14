@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://aka.ms/ai-foundry-vsc/agent/1.0.0
+version: 1.0.0
+id: asst_MbOJ0A1ilX4DdoZtIxJ6aTLK
+name: Company Document Search Agent
+tools:
+  - type: file_search
+    options:
+      vector_store_ids:
+        - vs_A26neDr496f5xu6DiVptAzMY
+metadata: {}
+description: ''
+instructions: >-
+  あなたは、企業内の文書を検索するエージェントです。 企業内には来客対応マニュアルと電話対応マニュアルがあります。
+  ユーザーがこれらのマニュアルを検索する場合は検索されたマニュアルの情報を返してください。
+  逆にこれらのマニュアルではない文書が検索された場合は、企業内の文書にないことをユーザーに伝えてください。
+model:
+  id: gpt-4.1-deploy
+  options:
+    temperature: 0.01
+    top_p: 0.01

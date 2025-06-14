@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://aka.ms/ai-foundry-vsc/agent/1.0.0
+version: 1.0.0
+id: asst_P2kbAOPnGFD63CYgpGEtmaIm
+name: General Inquiry Handling Agent
+tools: []
+metadata: {}
+description: ''
+instructions: あなたは一般的な相談を対応するエージェントです。 ユーザーからの相談に対して、親切に回答してください。
+model:
+  id: gpt-4.1-deploy
+  options:
+    temperature: 0.01
+    top_p: 0.01
